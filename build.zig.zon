@@ -1,15 +1,15 @@
 .{
     .name = "nats_c",
-    .version = "3.8.2+1",
+    .version = "3.9.1",
     .minimum_zig_version = "0.12.0",
     .dependencies = .{
         .nats_c = .{
-            .url = "git+https://github.com/nats-io/nats.c?ref=v3.8.2#d58bb6b5bf205684bb72bb28407687aacf6ff498",
-            .hash = "12207f10bd4b38309c79eadf22dfb3d9f134f1359dda01f9df6d9b42734ee2330b72",
+            .url = "git+https://github.com/nats-io/nats.c?ref=v3.9.1#97056709d07fd83700f459e7ea9ea2e5c34ff6bb",
+            .hash = "12203347177845724e82819c0243caa502b054427c75f29e7f22988c67f5a91bd504",
         },
         .libressl = .{
-            .url = "git+https://github.com/allyourcodebase/libressl.git?ref=3.9.2+1#02abfefee4e4eda28ce53c637b3c0d204ace8a6d",
-            .hash = "12201f5cc06c88f191696106723797449baacb6ea38b07b6cf31c18c0382a6bea33e",
+            .url = "git+https://github.com/allyourcodebase/libressl.git?ref=4.0.0#7aa9871c8c9897228662e61d1355f13491857913",
+            .hash = "1220a9ccbd8d9ba60b665a19ebdc5b412ac48e0eeb588616f087f6dd739a23fed5d6",
             .lazy = true,
         },
         .protobuf_c = .{
@@ -18,8 +18,8 @@
             .lazy = true,
         },
         .libsodium = .{
-            .url = "git+https://github.com/jedisct1/libsodium.git?ref=stable#3c6da4b8c27c7d546746eadabc9e2dd6c1fdfc2c",
-            .hash = "12207667c06c40826838b57922ec9c7f90ab2613bf317c6717d0ed2cdf6ca91df718",
+            .url = "git+https://github.com/jedisct1/libsodium.git?ref=stable#8f36e67d8dcb7c8bd32b2ccf9891caa7825ead41",
+            .hash = "122082bb74ee448b76311bb229f3886628a5fdbf0d34ac9bbccec6f28471d82caa3b",
             .lazy = true,
         },
     },
