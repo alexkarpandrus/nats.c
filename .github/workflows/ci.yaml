@@ -2,8 +2,6 @@ name: CI
 
 on:
   push:
-    branches:
-      - master
   pull_request:
     branches:
       - master
@@ -35,7 +33,7 @@ jobs:
 
       - if: ${{ matrix.check-format }}
         name: Check Formatting
-        run: zig fmt --ast-check --check .
+        run: zig fmt --check .
 
       - name: Build
         run: zig build ${{ matrix.build-options }} --summary all
