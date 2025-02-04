@@ -49,7 +49,7 @@ pub fn build(b: *std.Build) void {
     const tinfo = target.result;
     switch (tinfo.os.tag) {
         .windows => {
-            lib.defineCMacro("_WIN32", null);
+            lib.root_module.addCMacro("_WIN32", "");
             lib.addCSourceFiles(.{
                 .root = src_root,
                 .files = win_sources,
@@ -58,15 +58,15 @@ pub fn build(b: *std.Build) void {
             lib.linkSystemLibrary("ws2_32");
         },
         else => if (tinfo.isDarwin()) {
-            lib.defineCMacro("DARWIN", null);
+            lib.root_module.addCMacro("DARWIN", "");
             lib.addCSourceFiles(.{
                 .root = src_root,
                 .files = unix_sources,
                 .flags = cflags,
             });
         } else {
-            lib.defineCMacro("_GNU_SOURCE", null);
-            lib.defineCMacro("LINUX", null);
+            lib.root_module.addCMacro("_GNU_SOURCE", "");
+            lib.root_module.addCMacro("LINUX", "");
             lib.addCSourceFiles(.{
                 .root = src_root,
                 .files = unix_sources,
@@ -80,7 +80,7 @@ pub fn build(b: *std.Build) void {
         },
     }
 
-    lib.defineCMacro("_REENTRANT", null);
+    lib.root_module.addCMacro("_REENTRANT", "");
 
     for (install_headers) |header| {
         lib.installHeader(
@@ -90,17 +90,17 @@ pub fn build(b: *std.Build) void {
     }
 
     if (tls_dep) |dep| {
-        lib.defineCMacro("NATS_HAS_TLS", null);
-        lib.defineCMacro("NATS_USE_OPENSSL_1_1", null);
+        lib.root_module.addCMacro("NATS_HAS_TLS", "");
+        lib.root_module.addCMacro("NATS_USE_OPENSSL_1_1", "");
         if (tls_verify)
-            lib.defineCMacro("NATS_FORCE_HOST_VERIFICATION", null);
+            lib.root_module.addCMacro("NATS_FORCE_HOST_VERIFICATION", "");
         lib.linkLibrary(dep.artifact("ssl"));
     }
 
     if (protobuf_runtime) |dep| {
         lib.addIncludePath(upstream.path("deps"));
         lib.addIncludePath(upstream.path("stan"));
-        lib.defineCMacro("NATS_HAS_STREAMING", null);
+        lib.root_module.addCMacro("NATS_HAS_STREAMING", "");
 
         lib.addCSourceFiles(.{
             .root = src_root,
@@ -111,7 +111,7 @@ pub fn build(b: *std.Build) void {
     }
 
     if (libsodium_dep) |dep| {
-        lib.defineCMacro("NATS_USE_LIBSODIUM", null);
+        lib.root_module.addCMacro("NATS_USE_LIBSODIUM", "");
         // yep
         lib.linkLibrary(dep.artifact(if (tinfo.isMinGW()) "libsodium-static" else "sodium"));
     }

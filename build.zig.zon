@@ -8,8 +8,8 @@
             .hash = "12203347177845724e82819c0243caa502b054427c75f29e7f22988c67f5a91bd504",
         },
         .libressl = .{
-            .url = "git+https://github.com/allyourcodebase/libressl.git?ref=4.0.0#7aa9871c8c9897228662e61d1355f13491857913",
-            .hash = "1220a9ccbd8d9ba60b665a19ebdc5b412ac48e0eeb588616f087f6dd739a23fed5d6",
+            .url = "git+https://github.com/allyourcodebase/libressl.git?ref=4.0.0+1#fd0fe777153a75217e97ba22cd8b32005bb90d08",
+            .hash = "1220c6521dd6d37f0426fbe6c3b3c3f4282f28495311abc08fb4cebf21ea2346ba2f",
             .lazy = true,
         },
         .protobuf_c = .{
@@ -18,8 +18,8 @@
             .lazy = true,
         },
         .libsodium = .{
-            .url = "git+https://github.com/jedisct1/libsodium.git?ref=stable#8f36e67d8dcb7c8bd32b2ccf9891caa7825ead41",
-            .hash = "122082bb74ee448b76311bb229f3886628a5fdbf0d34ac9bbccec6f28471d82caa3b",
+            .url = "git+https://github.com/jedisct1/libsodium.git?ref=stable#59a98bc7f9d507175f551a53bfc0b2081f06e3ba",
+            .hash = "1220297067945b08f44a20b3b20e5e0fd39e178a30d96d4a3531fed5999252f52eea",
             .lazy = true,
         },
     },
