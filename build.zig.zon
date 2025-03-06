@@ -1,25 +1,26 @@
 .{
-    .name = "nats_c",
+    .name = .nats_c,
+    .fingerprint = 0x7C1C01CF9C235FD1,
     .version = "3.9.1",
-    .minimum_zig_version = "0.12.0",
+    .minimum_zig_version = "0.14.0",
     .dependencies = .{
         .nats_c = .{
             .url = "git+https://github.com/nats-io/nats.c?ref=v3.9.1#97056709d07fd83700f459e7ea9ea2e5c34ff6bb",
-            .hash = "12203347177845724e82819c0243caa502b054427c75f29e7f22988c67f5a91bd504",
+            .hash = "N-V-__8AAJAljQAzRxd4RXJOgoGcAkPKpQKwVEJ8dfKefyKY",
         },
         .libressl = .{
-            .url = "git+https://github.com/allyourcodebase/libressl.git?ref=4.0.0+1#fd0fe777153a75217e97ba22cd8b32005bb90d08",
-            .hash = "1220c6521dd6d37f0426fbe6c3b3c3f4282f28495311abc08fb4cebf21ea2346ba2f",
+            .url = "git+https://github.com/allyourcodebase/libressl.git?ref=4.0.0+2#18d16b266328f3e568ab4ee614ae8c054b682c9e",
+            .hash = "libressl-4.0.0--kqV4LnSAACWhbUEm8O5KHGuJpNJsN0xLIlbFun7ql-m",
             .lazy = true,
         },
         .protobuf_c = .{
-            .url = "git+https://github.com/allyourcodebase/protobuf-c.git?ref=1.5.0#ae7587481485e615d3866861703d41d3efc22b82",
-            .hash = "1220f454bf9412333c5d21b8c21b323fc7e4e37b02341bf2fa49f110b8bc5d97c972",
+            .url = "git+https://github.com/allyourcodebase/protobuf-c.git?ref=1.5.0+1#788002c09c410d4ecf35f602c8d727d64702fee8",
+            .hash = "protobuf_c-1.5.0-CLNmUYEUAACkZIYI4IaB5pQZplPmDKHdTzdAQVQWpapP",
             .lazy = true,
         },
         .libsodium = .{
-            .url = "git+https://github.com/jedisct1/libsodium.git?ref=stable#59a98bc7f9d507175f551a53bfc0b2081f06e3ba",
-            .hash = "1220297067945b08f44a20b3b20e5e0fd39e178a30d96d4a3531fed5999252f52eea",
+            .url = "git+https://github.com/jedisct1/libsodium.git?ref=stable#18a3d6b7eaa5c3f5428a01d2f63590715a9bc0c1",
+            .hash = "N-V-__8AAC1KggCmCtcaNShI0RX36oPr16azog6ch_mbIk6-",
             .lazy = true,
         },
     },

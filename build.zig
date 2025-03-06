@@ -49,7 +49,6 @@ pub fn build(b: *std.Build) void {
     const tinfo = target.result;
     switch (tinfo.os.tag) {
         .windows => {
-            lib.root_module.addCMacro("_WIN32", "");
             lib.addCSourceFiles(.{
                 .root = src_root,
                 .files = win_sources,
@@ -57,7 +56,7 @@ pub fn build(b: *std.Build) void {
             });
             lib.linkSystemLibrary("ws2_32");
         },
-        else => if (tinfo.isDarwin()) {
+        else => if (tinfo.os.tag.isDarwin()) {
             lib.root_module.addCMacro("DARWIN", "");
             lib.addCSourceFiles(.{
                 .root = src_root,
@@ -73,7 +72,7 @@ pub fn build(b: *std.Build) void {
                 .flags = cflags,
             });
             // just following the cmake logic
-            if (!tinfo.isAndroid()) {
+            if (!tinfo.abi.isAndroid()) {
                 lib.linkSystemLibrary("pthread");
                 lib.linkSystemLibrary("rt");
             }
