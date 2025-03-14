@@ -19,7 +19,7 @@ First, update your `build.zig.zon`:
 ```sh
 # Initialize a `zig build` project if you haven't already
 zig init
-# replace <refname> with the version you want to use, e.g. 3.9.1
+# replace <refname> with the version you want to use, e.g. 3.9.3
 zig fetch --save git+https://github.com/allyourcodebase/nats.c.git#<refname>
 ```
 
@@ -51,6 +51,7 @@ These dependencies are currently automatically retrieved and compiled as static 
 
 |  Refname  | NATS.c Version | Zig `0.14.0` | Zig `0.13.x` | Zig `0.12.x` |
 |-----------|----------------|------------- |--------------|--------------|
+| `3.9.3`   | `3.9.3`        | ✅           | ❌          | ❌          |
 | `3.9.1+1` | `3.9.1`        | ✅           | ❌          | ❌          |
 | `3.9.1`   | `3.9.1`        | ❌           | ✅          | ✅          |
 | `3.8.2+1` | `3.8.2`        | ❌           | ✅          | ✅          |

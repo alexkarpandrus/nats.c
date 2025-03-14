@@ -1,12 +1,12 @@
 .{
     .name = .nats_c,
     .fingerprint = 0x7C1C01CF9C235FD1,
-    .version = "3.9.1",
+    .version = "3.9.3",
     .minimum_zig_version = "0.14.0",
     .dependencies = .{
         .nats_c = .{
-            .url = "git+https://github.com/nats-io/nats.c?ref=v3.9.1#97056709d07fd83700f459e7ea9ea2e5c34ff6bb",
-            .hash = "N-V-__8AAJAljQAzRxd4RXJOgoGcAkPKpQKwVEJ8dfKefyKY",
+            .url = "git+https://github.com/nats-io/nats.c?ref=v3.9.3#6367f6ef0de877bb4594aec2b100d04a164c42d3",
+            .hash = "N-V-__8AAPRJjQAqKJb6awqyb39SOQBreH5Yjup9hvDzJELq",
         },
         .libressl = .{
             .url = "git+https://github.com/allyourcodebase/libressl.git?ref=4.0.0+2#18d16b266328f3e568ab4ee614ae8c054b682c9e",
