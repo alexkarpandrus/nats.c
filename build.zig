@@ -8,6 +8,7 @@ pub fn build(b: *std.Build) void {
     const enable_tls = b.option(bool, "enable-tls", "Build TLS support (default: true)") orelse true;
     const tls_verify = b.option(bool, "force-host-verify", "Force hostname verification for TLS connections (default: true)") orelse true;
     const enable_streaming = b.option(bool, "enable-streaming", "Build with streaming support (default: true)") orelse true;
+    const enable_pic = b.option(bool, "enable-pic", "Enable Position Independent Code for shared libraries") orelse false;
 
     const upstream = b.dependency("nats_c", .{});
     const tls_dep = if (enable_tls) b.lazyDependency(
@@ -32,6 +33,7 @@ pub fn build(b: *std.Build) void {
         .name = "nats",
         .target = target,
         .optimize = optimize,
+        .pic = enable_pic,
     });
 
     const cflags: []const []const u8 = &.{};
@@ -69,7 +71,7 @@ pub fn build(b: *std.Build) void {
             lib.addCSourceFiles(.{
                 .root = src_root,
                 .files = unix_sources,
-                .flags = cflags,
+                .flags = if (enable_pic) &.{"-fPIC"} else &.{},
             });
             // just following the cmake logic
             if (!tinfo.abi.isAndroid()) {
